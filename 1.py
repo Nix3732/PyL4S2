@@ -1,7 +1,5 @@
-m = []
-v = int(input())
-for i in range(v):
-    m.append(int(input()))
+# n = int(input())
+# m = {int(input()) for i in range(n)}
+# print(len(m))
 
-
-print(len(set(m)))
+print(len({int(input()) for i in range(int(input()))}))
