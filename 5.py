@@ -1,18 +1,14 @@
 n = int(input())
-m = []
-for i in range(n):
-    m.append(input().split(" "))
-print(m)
 d = {}
-c = 0
-for i in range(len(m)):
-    if int(m[i][0]) not in d:
-        d[int(m[i][0])] = [c, int(m[i][2])]
-        c += 1
-    else:
-        d[int(m[i][0])][1] += int(m[i][2])
+for i in range(n):
+    buy = str(input()).split()
+    ID = buy[0]
 
-answer = []
-for i in d:
-    answer.append([i, d[i][1]])
-print(*answer)
+    if ID not in d:
+        d[ID] = [(buy[1], buy[2])]
+    else:
+        d[ID].append((buy[1], buy[2]))
+
+for key in d:
+    for l in range(len(d[key])):
+        print("id:", key, "Good:", d[key][l][0], "Value:", d[key][l][1])
